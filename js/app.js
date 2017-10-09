@@ -17,6 +17,7 @@ $(document).ready(function() {
   });
 });
 
+//delaring map as a global variable
 var map;
 
 //Initialize and Load google maps
