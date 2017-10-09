@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sid Neighborhood Map</title>
+        <meta name="author" content="Siddharth Mistry">
+        <meta name="keywords" content="junior front end web developer, front end web developer, front end web development, web design resume, web design, software developer, software engineer, junior software developer, junior software engineer">
+        <!-- Icon in page title -->
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.ico">
+        <!-- My own CSS -->
+        <link rel="stylesheet" href="css/styles.css">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <!-- fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    </head>
+    <body>
+        <main class="container-fluid h-100">
+            <div class="row h-100">
+                <!-- create a bootstrap navbar to include search list and search bar filter -->
+                <main class="col p-0 navbar-inverse">
+                    <a href class="float-right m-3 navbar-light" data-target="#sidebar" data-toggle="collapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </a>
+                    <div class="content bg-inverse">
+                        <!-- Display map -->
+                        <div id="map">
+                            <!-- creating a div element for displaying map error loading message -->
+                            <div class="map-error-handler"></div>
+                        </div>
+                    </div>
+                </main>
+                <nav class="col-2 collapse bg-inverse pt-2 h-100 search-bar-width" id="sidebar">
+                    <h4 class="location-title text-white">Richmond, VA Neighborhood Map</h4>
+                    <!-- create a search bar to search name of the place -->
+                    <input type="text" class="form-control" placeholder="Search" name="q" data-bind="textInput: searchItem, valueUpdate: 'afterkeydown'">
+                    <hr class="search-bar-hr">
+                    <ul class="nav flex-column" data-bind="foreach: myLocations">
+                        <a href="#"><li class="nav-item text-white my-locations-list" data-bind="text: title, click: $parent.makeMarkerBounce"></li></a>
+                    </ul>
+                </nav>
+            </div>
+        </main>
+
+        <!-- creating a footer to display credits and attributes -->
+        <footer class="container text-center footer">
+            <img src="img/foursquare.png" id="foursquare-icon" alt="foursquare API attribute">
+            Thanks to <a class="href" href="https://developer.foursquare.com/places-api" target="_blank">FourSquare Developers</a> for providing Places API</div>
+            <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+            <div>Thanks to MaxCDN for providing the excellent <a href="https://getbootstrap.com/docs/3.3/getting-started/" target="_blank">BootstrapCDN</a>
+        </footer>
+
+        <!-- script tags -->
+        <!-- jquery library using CDN -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+        <!-- Bootstrap JS from MaxCDN -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <!-- Knockout JS framework load -->
+        <script src='knockout/knockout_v3.4.2.js'></script>
+        <!-- My own JS file that is based on Knockout's MVVM model -->
+        <script src='js/app.js'></script>
+        <script src="js/data.js"></script>
+        <!-- Load Google Map API -->
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJ58mKBZaZi_Nt79sPmazkg4aUPaviwfM&callback=initMap"
+        type="text/javascript" onerror="googleMapsLoadError()"></script>
+    </body>
+</html>
