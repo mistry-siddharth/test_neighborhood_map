@@ -71,13 +71,23 @@ body {
 }
 
 #content {
-    height: 300px;
-    width: 400px;
+    margin-top: 10px;
+    height: 200px;
+    width: 300px;
 }
 
-@media (max-width: 768px) {
-    .search {
-        font-size: .7em;
-        margin-top: 5px;
+@media screen and (min-width: 350px) and (max-width: 450px) {
+    #content {
+        margin-top: 10px;
+        height: 300px;
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 349px) {
+    #content {
+        margin-top: 10px;
+        height: 300px;
+        width: 200px;
     }
 }
