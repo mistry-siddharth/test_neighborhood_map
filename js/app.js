@@ -73,7 +73,8 @@ function ViewModel(){
                     '<h5 class="category"> (' + self.category + ') </h5>' +
                     '<h6 class="address-heading"> Address: </h6>' +
                     '<p class="address">' + self.street + '</p>' +
-                    '<p class="address">' + self.city + '</p>';
+                    '<p class="address">' + self.city + '</p>' +
+                    '<div id="content"></div>';
 
                 infowindow.setContent(self.infoWindowContent + self.displayDetails);
                 }).fail(function() {
